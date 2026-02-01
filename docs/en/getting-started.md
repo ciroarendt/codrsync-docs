@@ -3,12 +3,18 @@
 ## Prerequisites
 
 - Python 3.10 or higher
-- pip or Homebrew (for installation)
-- Anthropic API key (for AI features)
+- One of: pip, pipx, Homebrew, or npm
+- API key for AI features (Anthropic, OpenAI, or codrsync cloud)
 
 ## Installation
 
-### Option 1: Homebrew (Recommended for macOS)
+### Option 1: Install Script (Recommended)
+
+```bash
+curl -fsSL https://codrsync.dev/install.sh | bash
+```
+
+### Option 2: Homebrew (macOS/Linux)
 
 ```bash
 # Add the tap
@@ -21,10 +27,24 @@ brew install codrsync
 codrsync --version
 ```
 
-### Option 2: pip
+### Option 3: pip
 
 ```bash
 pip install codrsync
+codrsync --version
+```
+
+### Option 4: pipx (Isolated Environment)
+
+```bash
+pipx install codrsync
+codrsync --version
+```
+
+### Option 5: npm
+
+```bash
+npm install -g codrsync
 codrsync --version
 ```
 
@@ -32,23 +52,36 @@ codrsync --version
 
 ### API Key Setup
 
-For AI-powered features, you need an Anthropic API key:
+For AI-powered features, set one of these API keys:
 
 ```bash
+# Anthropic (Claude) - Recommended
 export ANTHROPIC_API_KEY="sk-ant-..."
+
+# OpenAI (GPT)
+export OPENAI_API_KEY="sk-..."
+
+# Google (Gemini)
+export GOOGLE_API_KEY="..."
 ```
 
 Add this to your `~/.bashrc` or `~/.zshrc` for persistence.
 
 ### Cloud Authentication
 
-Alternatively, use codrsync cloud:
+Alternatively, use codrsync cloud (includes API access):
 
 ```bash
 codrsync auth --cloud
 ```
 
 This opens a browser for authentication.
+
+### Check Configuration
+
+```bash
+codrsync doctor
+```
 
 ## Your First Project
 
@@ -66,6 +99,7 @@ The wizard will guide you through:
 1. Project name and description
 2. Language/framework selection
 3. Initial structure creation
+4. PRP (Product Requirement Prompt) generation
 
 ### Existing Project
 
@@ -77,6 +111,37 @@ codrsync scan
 
 # Connect integrations
 codrsync connect
+
+# Check status
+codrsync status
+```
+
+### Superego Mode (with Claude Code)
+
+Use codrsync as a meta-orchestrator for Claude Code:
+
+```bash
+codrsync start
+```
+
+This launches Claude Code with codrsync context and guidelines.
+
+## Project Structure
+
+After initialization, codrsync creates:
+
+```
+your-project/
+├── doc/
+│   ├── project/
+│   │   ├── context.md      # Project context for AI
+│   │   └── scan-result.json
+│   ├── prp/
+│   │   └── *.md            # Product Requirement Prompts
+│   └── task/
+│       └── context-session.md
+├── CLAUDE.md               # Claude Code instructions
+└── ... your code
 ```
 
 ## Next Steps

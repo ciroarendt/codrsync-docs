@@ -3,12 +3,18 @@
 ## Pré-requisitos
 
 - Python 3.10 ou superior
-- pip ou Homebrew (para instalação)
-- Chave API da Anthropic (para recursos de IA)
+- Um dos: pip, pipx, Homebrew ou npm
+- Chave API para recursos de IA (Anthropic, OpenAI ou codrsync cloud)
 
 ## Instalação
 
-### Opção 1: Homebrew (Recomendado para macOS)
+### Opção 1: Script de Instalação (Recomendado)
+
+```bash
+curl -fsSL https://codrsync.dev/install.sh | bash
+```
+
+### Opção 2: Homebrew (macOS/Linux)
 
 ```bash
 # Adicionar o tap
@@ -21,34 +27,61 @@ brew install codrsync
 codrsync --version
 ```
 
-### Opção 2: pip
+### Opção 3: pip
 
 ```bash
 pip install codrsync
 codrsync --version
 ```
 
-## Configuração
-
-### Configurar Chave API
-
-Para recursos com IA, você precisa de uma chave API da Anthropic:
+### Opção 4: pipx (Ambiente Isolado)
 
 ```bash
-export ANTHROPIC_API_KEY="sk-ant-..."
+pipx install codrsync
+codrsync --version
 ```
 
-Adicione ao seu `~/.bashrc` ou `~/.zshrc` para persistência.
+### Opção 5: npm
+
+```bash
+npm install -g codrsync
+codrsync --version
+```
+
+## Configuração
+
+### Configuração de Chave API
+
+Para recursos com IA, configure uma dessas chaves API:
+
+```bash
+# Anthropic (Claude) - Recomendado
+export ANTHROPIC_API_KEY="sk-ant-..."
+
+# OpenAI (GPT)
+export OPENAI_API_KEY="sk-..."
+
+# Google (Gemini)
+export GOOGLE_API_KEY="..."
+```
+
+Adicione ao seu `~/.bashrc` ou `~/.zshrc` para persistir.
 
 ### Autenticação Cloud
 
-Alternativamente, use o codrsync cloud:
+Alternativamente, use codrsync cloud (inclui acesso à API):
 
 ```bash
 codrsync auth --cloud
 ```
 
 Isso abre o navegador para autenticação.
+
+### Verificar Configuração
+
+```bash
+codrsync doctor
+```
 
 ## Seu Primeiro Projeto
 
@@ -66,6 +99,7 @@ O wizard vai guiá-lo através de:
 1. Nome e descrição do projeto
 2. Seleção de linguagem/framework
 3. Criação da estrutura inicial
+4. Geração de PRP (Product Requirement Prompt)
 
 ### Projeto Existente
 
@@ -77,6 +111,37 @@ codrsync scan
 
 # Conectar integrações
 codrsync connect
+
+# Verificar status
+codrsync status
+```
+
+### Modo Superego (com Claude Code)
+
+Use codrsync como meta-orquestrador para Claude Code:
+
+```bash
+codrsync start
+```
+
+Isso inicia o Claude Code com contexto e diretrizes do codrsync.
+
+## Estrutura do Projeto
+
+Após inicialização, codrsync cria:
+
+```
+seu-projeto/
+├── doc/
+│   ├── project/
+│   │   ├── context.md      # Contexto do projeto para IA
+│   │   └── scan-result.json
+│   ├── prp/
+│   │   └── *.md            # Product Requirement Prompts
+│   └── task/
+│       └── context-session.md
+├── CLAUDE.md               # Instruções para Claude Code
+└── ... seu código
 ```
 
 ## Próximos Passos

@@ -8,37 +8,56 @@ codrsync [OPÇÕES] COMANDO [ARGS]
 
 | Opção | Descrição |
 |-------|-----------|
-| `--version` | Mostrar versão e sair |
+| `--version`, `-v` | Mostrar versão e sair |
 | `--help` | Mostrar mensagem de ajuda |
 | `--lang [en\|pt-br]` | Definir idioma |
 
 ---
 
-## Comandos
+## Comandos Locais (Sem IA)
 
-### init
+### status
 
-Inicializar um novo projeto com setup guiado.
+Mostrar dashboard de status do projeto.
 
 ```bash
-codrsync init [OPÇÕES]
+codrsync status [OPÇÕES]
 ```
 
 | Opção | Descrição |
 |-------|-----------|
-| `--path CAMINHO` | Diretório do projeto (padrão: atual) |
-| `--template NOME` | Usar um template específico |
+| `--path CAMINHO` | Diretório do projeto |
 
-**Exemplo:**
+---
+
+### roadmap
+
+Mostrar roadmap e timeline do projeto.
+
 ```bash
-codrsync init --path ./meu-app
+codrsync roadmap
 ```
+
+---
+
+### export
+
+Exportar projeto para diferentes formatos.
+
+```bash
+codrsync export [OPÇÕES]
+```
+
+| Opção | Descrição |
+|-------|-----------|
+| `--format FORMATO` | Formato de saída (json, markdown) |
+| `--output CAMINHO` | Caminho do arquivo de saída |
 
 ---
 
 ### scan
 
-Escanear projeto existente para detectar stack e contexto.
+Escanear projeto atual para detectar stack, docs e integrações.
 
 ```bash
 codrsync scan [OPÇÕES]
@@ -56,11 +75,18 @@ codrsync scan [OPÇÕES]
 codrsync scan --github --docs
 ```
 
+**Detecta:**
+- Linguagens: Python, JavaScript/TypeScript, Go, Rust, etc.
+- Frameworks: Next.js, FastAPI, Django, Express, etc.
+- Bancos de dados: Prisma, Supabase, PostgreSQL, MongoDB
+- Infraestrutura: Docker, Kubernetes, Vercel, GitHub Actions
+- Ferramentas: Tailwind CSS, ESLint, Prettier, etc.
+
 ---
 
 ### connect
 
-Conectar integrações do projeto.
+Verificar e mostrar status de integrações com serviços externos.
 
 ```bash
 codrsync connect [SERVIÇO] [OPÇÕES]
@@ -73,6 +99,7 @@ codrsync connect [SERVIÇO] [OPÇÕES]
 | `github` | Conectar repositório GitHub |
 | `tailwind` | Detectar configuração Tailwind |
 | `mcp` | Detectar servidores MCP |
+| `digitalocean` | Conectar DigitalOcean |
 
 **Exemplo:**
 ```bash
@@ -82,39 +109,99 @@ codrsync connect supabase  # Serviço específico
 
 ---
 
-### status
+### sprint
 
-Mostrar status e configuração do projeto.
+Gerenciar sprints de desenvolvimento.
 
 ```bash
-codrsync status [OPÇÕES]
+codrsync sprint [SUBCOMANDO]
+```
+
+| Subcomando | Descrição |
+|------------|-----------|
+| `list` | Listar todas as sprints |
+| `current` | Mostrar sprint atual |
+| `create` | Criar nova sprint |
+
+---
+
+## Comandos com IA
+
+### init
+
+Inicializar novo projeto com kickstart guiado por IA.
+
+```bash
+codrsync init [OPÇÕES]
+```
+
+| Opção | Descrição |
+|-------|-----------|
+| `--path CAMINHO` | Diretório do projeto (padrão: atual) |
+| `--template NOME` | Usar um template específico |
+
+**Exemplo:**
+```bash
+codrsync init --path ./meu-app
+```
+
+Se executado em diretório com código existente, oferece importar o projeto.
+
+---
+
+### build
+
+Executar desenvolvimento com guia de IA.
+
+```bash
+codrsync build [OPÇÕES]
+```
+
+| Opção | Descrição |
+|-------|-----------|
+| `--prp ARQUIVO` | Arquivo PRP para executar |
+| `--step N` | Iniciar de passo específico |
+
+---
+
+### prp
+
+Gerenciar PRPs (Product Requirement Prompts).
+
+```bash
+codrsync prp [SUBCOMANDO]
+```
+
+| Subcomando | Descrição |
+|------------|-----------|
+| `list` | Listar todos os PRPs |
+| `create` | Criar novo PRP |
+| `show NOME` | Mostrar detalhes do PRP |
+
+---
+
+### start
+
+Iniciar Claude Code com codrsync como superego.
+
+```bash
+codrsync start [OPÇÕES]
 ```
 
 | Opção | Descrição |
 |-------|-----------|
 | `--path CAMINHO` | Diretório do projeto |
+| `--model MODELO` | Modelo de IA a usar |
+
+Inicia o Claude Code com contexto completo do projeto e diretrizes do codrsync.
 
 ---
 
-### doctor
-
-Diagnosticar configuração e dependências do projeto.
-
-```bash
-codrsync doctor [OPÇÕES]
-```
-
-Verifica:
-- Versão do Python
-- Configuração da chave API
-- Estrutura do projeto
-- Status das integrações
-
----
+## Comandos de Configuração
 
 ### auth
 
-Gerenciar autenticação.
+Configurar autenticação do backend de IA.
 
 ```bash
 codrsync auth [OPÇÕES]
@@ -128,19 +215,36 @@ codrsync auth [OPÇÕES]
 
 ---
 
-### kickstart
+### doctor
 
-Iniciar sessão de desenvolvimento guiada por IA.
+Verificar instalação e configuração do codrsync.
 
 ```bash
-codrsync kickstart [OPÇÕES]
+codrsync doctor [OPÇÕES]
 ```
 
-| Opção | Descrição |
-|-------|-----------|
-| `--path CAMINHO` | Diretório do projeto |
+Verifica:
+- Versão do Python
+- Configuração da chave API
+- Estrutura do projeto
+- Status das integrações
+- Dependências do CLI
 
-Inicia uma sessão interativa com IA para desenvolvimento guiado.
+---
+
+### storage
+
+Gerenciar armazenamento cloud.
+
+```bash
+codrsync storage [SUBCOMANDO]
+```
+
+| Subcomando | Descrição |
+|------------|-----------|
+| `list` | Listar arquivos armazenados |
+| `sync` | Sincronizar local/cloud |
+| `clear` | Limpar armazenamento cloud |
 
 ---
 

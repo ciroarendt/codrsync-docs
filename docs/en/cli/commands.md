@@ -8,37 +8,56 @@ codrsync [OPTIONS] COMMAND [ARGS]
 
 | Option | Description |
 |--------|-------------|
-| `--version` | Show version and exit |
+| `--version`, `-v` | Show version and exit |
 | `--help` | Show help message |
 | `--lang [en\|pt-br]` | Set language |
 
 ---
 
-## Commands
+## Local Commands (No AI needed)
 
-### init
+### status
 
-Initialize a new project with guided setup.
+Show project status dashboard.
 
 ```bash
-codrsync init [OPTIONS]
+codrsync status [OPTIONS]
 ```
 
 | Option | Description |
 |--------|-------------|
-| `--path PATH` | Project directory (default: current) |
-| `--template NAME` | Use a specific template |
+| `--path PATH` | Project directory |
 
-**Example:**
+---
+
+### roadmap
+
+Show project roadmap and timeline.
+
 ```bash
-codrsync init --path ./my-app
+codrsync roadmap
 ```
+
+---
+
+### export
+
+Export project to different formats.
+
+```bash
+codrsync export [OPTIONS]
+```
+
+| Option | Description |
+|--------|-------------|
+| `--format FORMAT` | Output format (json, markdown) |
+| `--output PATH` | Output file path |
 
 ---
 
 ### scan
 
-Scan existing project to detect stack and context.
+Scan current project to detect stack, docs, and integrations.
 
 ```bash
 codrsync scan [OPTIONS]
@@ -56,11 +75,18 @@ codrsync scan [OPTIONS]
 codrsync scan --github --docs
 ```
 
+**Detects:**
+- Languages: Python, JavaScript/TypeScript, Go, Rust, etc.
+- Frameworks: Next.js, FastAPI, Django, Express, etc.
+- Databases: Prisma, Supabase, PostgreSQL, MongoDB
+- Infrastructure: Docker, Kubernetes, Vercel, GitHub Actions
+- Tools: Tailwind CSS, ESLint, Prettier, etc.
+
 ---
 
 ### connect
 
-Connect project integrations.
+Check and display integration status for external services.
 
 ```bash
 codrsync connect [SERVICE] [OPTIONS]
@@ -73,6 +99,7 @@ codrsync connect [SERVICE] [OPTIONS]
 | `github` | Connect GitHub repository |
 | `tailwind` | Detect Tailwind configuration |
 | `mcp` | Detect MCP servers |
+| `digitalocean` | Connect DigitalOcean |
 
 **Example:**
 ```bash
@@ -82,39 +109,99 @@ codrsync connect supabase  # Specific service
 
 ---
 
-### status
+### sprint
 
-Show project status and configuration.
+Manage development sprints.
 
 ```bash
-codrsync status [OPTIONS]
+codrsync sprint [SUBCOMMAND]
+```
+
+| Subcommand | Description |
+|------------|-------------|
+| `list` | List all sprints |
+| `current` | Show current sprint |
+| `create` | Create new sprint |
+
+---
+
+## AI-Powered Commands
+
+### init
+
+Initialize a new project with AI-guided kickstart.
+
+```bash
+codrsync init [OPTIONS]
+```
+
+| Option | Description |
+|--------|-------------|
+| `--path PATH` | Project directory (default: current) |
+| `--template NAME` | Use a specific template |
+
+**Example:**
+```bash
+codrsync init --path ./my-app
+```
+
+If run in a directory with existing code, offers to import the project.
+
+---
+
+### build
+
+Execute development with AI guidance.
+
+```bash
+codrsync build [OPTIONS]
+```
+
+| Option | Description |
+|--------|-------------|
+| `--prp FILE` | PRP file to execute |
+| `--step N` | Start from specific step |
+
+---
+
+### prp
+
+Manage PRPs (Product Requirement Prompts).
+
+```bash
+codrsync prp [SUBCOMMAND]
+```
+
+| Subcommand | Description |
+|------------|-------------|
+| `list` | List all PRPs |
+| `create` | Create new PRP |
+| `show NAME` | Show PRP details |
+
+---
+
+### start
+
+Start Claude Code with codrsync as superego.
+
+```bash
+codrsync start [OPTIONS]
 ```
 
 | Option | Description |
 |--------|-------------|
 | `--path PATH` | Project directory |
+| `--model MODEL` | AI model to use |
+
+Launches Claude Code with full project context and codrsync guidelines.
 
 ---
 
-### doctor
-
-Diagnose project configuration and dependencies.
-
-```bash
-codrsync doctor [OPTIONS]
-```
-
-Checks:
-- Python version
-- API key configuration
-- Project structure
-- Integration status
-
----
+## Configuration Commands
 
 ### auth
 
-Manage authentication.
+Configure AI backend authentication.
 
 ```bash
 codrsync auth [OPTIONS]
@@ -128,19 +215,36 @@ codrsync auth [OPTIONS]
 
 ---
 
-### kickstart
+### doctor
 
-Start AI-guided development session.
+Check codrsync installation and configuration.
 
 ```bash
-codrsync kickstart [OPTIONS]
+codrsync doctor [OPTIONS]
 ```
 
-| Option | Description |
-|--------|-------------|
-| `--path PATH` | Project directory |
+Checks:
+- Python version
+- API key configuration
+- Project structure
+- Integration status
+- CLI dependencies
 
-Launches an interactive AI session for guided development.
+---
+
+### storage
+
+Manage cloud storage.
+
+```bash
+codrsync storage [SUBCOMMAND]
+```
+
+| Subcommand | Description |
+|------------|-------------|
+| `list` | List stored files |
+| `sync` | Sync local/cloud |
+| `clear` | Clear cloud storage |
 
 ---
 

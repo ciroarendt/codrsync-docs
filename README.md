@@ -6,31 +6,39 @@
 
 ## English
 
-**Turn any dev into jedi ninja codr**
+**Your AI's AI — Context engineering that makes Claude, GPT & Gemini 10x smarter**
 
 codrsync is an AI-powered development orchestrator that helps you ship faster with confidence through guided implementation, interactive validation, and persistent context.
 
 ### Features
 
+- **Context Engineering**: Optimize AI interactions with structured context
 - **AI-Guided Development**: Intelligent assistance for complex implementations
-- **Project Scaffolding**: Quick project setup with best practices
 - **Stack Detection**: Automatic detection of languages, frameworks, and tools
-- **Integration Support**: Connect with Supabase, Vercel, GitHub, and more
-- **Persistent Context**: Maintains project context across sessions
+- **Integration Support**: Connect with Supabase, Vercel, GitHub, Tailwind, and more
+- **Superego Mode**: Use codrsync as a meta-orchestrator for Claude Code
+- **Multi-provider**: Works with Claude, GPT, Gemini, and local models via Ollama
 
 ### Installation
 
-#### Via Homebrew (macOS)
+Choose your preferred method:
 
 ```bash
+# Recommended: Install script
+curl -fsSL https://codrsync.dev/install.sh | bash
+
+# Homebrew (macOS/Linux)
 brew tap ciroarendt/codrsync
 brew install codrsync
-```
 
-#### Via pip
-
-```bash
+# pip
 pip install codrsync
+
+# pipx (isolated environment)
+pipx install codrsync
+
+# npm (installs Python package automatically)
+npm install -g codrsync
 ```
 
 ### Quick Start
@@ -47,7 +55,24 @@ codrsync status
 
 # Connect integrations
 codrsync connect
+
+# Start superego mode with Claude Code
+codrsync start
 ```
+
+### Commands
+
+| Command | Description |
+|---------|-------------|
+| `init` | Initialize project with AI-guided kickstart |
+| `scan` | Detect stack, docs, and integrations |
+| `connect` | Check integration status |
+| `status` | Show project dashboard |
+| `build` | Execute development with AI guidance |
+| `prp` | Manage PRPs (Product Requirement Prompts) |
+| `start` | Start Claude Code with codrsync as superego |
+| `sprint` | Manage development sprints |
+| `doctor` | Check installation and configuration |
 
 ### Documentation
 
@@ -57,15 +82,16 @@ codrsync connect
 
 ### Configuration
 
-Set your Anthropic API key for AI features:
+Set your API key for AI features:
 
 ```bash
+# Anthropic (Claude)
 export ANTHROPIC_API_KEY="your-key"
-```
 
-Or login to codrsync cloud:
+# OpenAI (GPT)
+export OPENAI_API_KEY="your-key"
 
-```bash
+# Or login to codrsync cloud
 codrsync auth --cloud
 ```
 
@@ -73,31 +99,39 @@ codrsync auth --cloud
 
 ## Português
 
-**Transforme qualquer dev em jedi ninja codr**
+**A IA da sua IA — Context engineering que torna Claude, GPT e Gemini 10x mais inteligentes**
 
 codrsync é um orquestrador de desenvolvimento com IA que ajuda você a entregar mais rápido e com confiança através de implementação guiada, validação interativa e contexto persistente.
 
 ### Recursos
 
+- **Context Engineering**: Otimize interações com IA usando contexto estruturado
 - **Desenvolvimento Guiado por IA**: Assistência inteligente para implementações complexas
-- **Scaffolding de Projetos**: Setup rápido com boas práticas
 - **Detecção de Stack**: Detecção automática de linguagens, frameworks e ferramentas
-- **Suporte a Integrações**: Conecte com Supabase, Vercel, GitHub e mais
-- **Contexto Persistente**: Mantém contexto do projeto entre sessões
+- **Suporte a Integrações**: Conecte com Supabase, Vercel, GitHub, Tailwind e mais
+- **Modo Superego**: Use codrsync como meta-orquestrador para Claude Code
+- **Multi-provider**: Funciona com Claude, GPT, Gemini e modelos locais via Ollama
 
 ### Instalação
 
-#### Via Homebrew (macOS)
+Escolha seu método preferido:
 
 ```bash
+# Recomendado: Script de instalação
+curl -fsSL https://codrsync.dev/install.sh | bash
+
+# Homebrew (macOS/Linux)
 brew tap ciroarendt/codrsync
 brew install codrsync
-```
 
-#### Via pip
-
-```bash
+# pip
 pip install codrsync
+
+# pipx (ambiente isolado)
+pipx install codrsync
+
+# npm (instala o pacote Python automaticamente)
+npm install -g codrsync
 ```
 
 ### Início Rápido
@@ -114,7 +148,24 @@ codrsync status
 
 # Conectar integrações
 codrsync connect
+
+# Iniciar modo superego com Claude Code
+codrsync start
 ```
+
+### Comandos
+
+| Comando | Descrição |
+|---------|-----------|
+| `init` | Inicializar projeto com kickstart guiado por IA |
+| `scan` | Detectar stack, docs e integrações |
+| `connect` | Verificar status de integrações |
+| `status` | Mostrar dashboard do projeto |
+| `build` | Executar desenvolvimento com guia IA |
+| `prp` | Gerenciar PRPs (Product Requirement Prompts) |
+| `start` | Iniciar Claude Code com codrsync como superego |
+| `sprint` | Gerenciar sprints de desenvolvimento |
+| `doctor` | Verificar instalação e configuração |
 
 ### Documentação
 
@@ -124,15 +175,16 @@ codrsync connect
 
 ### Configuração
 
-Configure sua chave API da Anthropic para recursos de IA:
+Configure sua chave API para recursos de IA:
 
 ```bash
+# Anthropic (Claude)
 export ANTHROPIC_API_KEY="sua-chave"
-```
 
-Ou faça login no codrsync cloud:
+# OpenAI (GPT)
+export OPENAI_API_KEY="sua-chave"
 
-```bash
+# Ou faça login no codrsync cloud
 codrsync auth --cloud
 ```
 
@@ -142,6 +194,7 @@ codrsync auth --cloud
 
 - [Website](https://codrsync.dev)
 - [PyPI](https://pypi.org/project/codrsync/)
+- [npm](https://www.npmjs.com/package/codrsync)
 - [Homebrew Tap](https://github.com/ciroarendt/homebrew-codrsync)
 
 ## License / Licença
