@@ -10,6 +10,7 @@ codrsync [OPÇÕES] COMANDO [ARGS]
 |-------|-----------|
 | `--version`, `-v` | Mostrar versão e sair |
 | `--help` | Mostrar mensagem de ajuda |
+| `--help-ai` | Iniciar chat de onboarding com IA |
 | `--lang [en\|pt-br]` | Definir idioma |
 
 ---

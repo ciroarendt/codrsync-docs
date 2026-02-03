@@ -10,6 +10,7 @@ codrsync [OPTIONS] COMMAND [ARGS]
 |--------|-------------|
 | `--version`, `-v` | Show version and exit |
 | `--help` | Show help message |
+| `--help-ai` | Start AI-assisted onboarding chat |
 | `--lang [en\|pt-br]` | Set language |
 
 ---
