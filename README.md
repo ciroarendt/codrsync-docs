@@ -6,7 +6,7 @@
 
 ## English
 
-**Your AI's AI — Context engineering that makes Claude, GPT & Gemini 10x smarter**
+**Your AI's AI — Context engineering made simple**
 
 codrsync is an AI-powered development orchestrator that helps you ship faster with confidence through guided implementation, interactive validation, and persistent context.
 
@@ -14,6 +14,7 @@ codrsync is an AI-powered development orchestrator that helps you ship faster wi
 
 - **Context Engineering**: Optimize AI interactions with structured context
 - **AI-Guided Development**: Intelligent assistance for complex implementations
+- **AI-Assisted Onboarding**: Get help during installation with `codrsync --help-ai`
 - **Stack Detection**: Automatic detection of languages, frameworks, and tools
 - **Integration Support**: Connect with Supabase, Vercel, GitHub, Tailwind, and more
 - **Superego Mode**: Use codrsync as a meta-orchestrator for Claude Code
@@ -99,7 +100,7 @@ codrsync auth --cloud
 
 ## Português
 
-**A IA da sua IA — Context engineering que torna Claude, GPT e Gemini 10x mais inteligentes**
+**A IA da sua IA — Engenharia de contexto simplificada**
 
 codrsync é um orquestrador de desenvolvimento com IA que ajuda você a entregar mais rápido e com confiança através de implementação guiada, validação interativa e contexto persistente.
 
@@ -107,6 +108,7 @@ codrsync é um orquestrador de desenvolvimento com IA que ajuda você a entregar
 
 - **Context Engineering**: Otimize interações com IA usando contexto estruturado
 - **Desenvolvimento Guiado por IA**: Assistência inteligente para implementações complexas
+- **Onboarding com IA**: Receba ajuda durante a instalação com `codrsync --help-ai`
 - **Detecção de Stack**: Detecção automática de linguagens, frameworks e ferramentas
 - **Suporte a Integrações**: Conecte com Supabase, Vercel, GitHub, Tailwind e mais
 - **Modo Superego**: Use codrsync como meta-orquestrador para Claude Code
