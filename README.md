@@ -6,23 +6,23 @@
 
 ## English
 
-**Your AI's AI — Context engineering made simple**
+**AI Development Orchestrator + Product Suite**
 
-codrsync is an AI-powered development orchestrator that helps you ship faster with confidence through guided implementation, interactive validation, and persistent context.
+codrsync is an AI-powered development orchestrator and product suite that helps you ship faster with confidence. From context engineering and guided implementation to cloud storage, auto-documentation, and AI presentations — everything you need to build, document, and deploy.
 
-### Features
+### Product Suite
 
-- **Context Engineering**: Optimize AI interactions with structured context
-- **AI-Guided Development**: Intelligent assistance for complex implementations
-- **AI-Assisted Onboarding**: Get help during installation with `codrsync --help-ai`
-- **Stack Detection**: Automatic detection of languages, frameworks, and tools
-- **Integration Support**: Connect with Supabase, Vercel, GitHub, Tailwind, and more
-- **Superego Mode**: Use codrsync as a meta-orchestrator for Claude Code
-- **Multi-provider**: Works with Claude, GPT, Gemini, and local models via Ollama
+| Product | Description | Availability |
+|---------|-------------|--------------|
+| [**codrsync**](docs/en/products/suite-overview.md#codrsync) | AI development orchestrator with context engineering | Free + All Plans |
+| [**cloudrsync**](docs/en/products/cloudrsync.md) | S3-compatible cloud storage — up to 70% cheaper than AWS | Free (1 GB) / Pro+ |
+| [**docrsync**](docs/en/products/suite-overview.md#docrsync) | Auto-generate and maintain technical documentation | Pro+ |
+| [**pptrsync**](docs/en/products/suite-overview.md#pptrsync) | Create presentations from your codebase with AI visuals | Pro+ |
+| [**envrsync**](docs/en/products/suite-overview.md#envrsync) | Environment scanner — stack detection, security analysis | Free (basic) / Pro |
+
+> **Coming soon:** [gpursync](docs/en/products/suite-overview.md#gpursync) — Distributed GPU cloud for ML workloads.
 
 ### Installation
-
-Choose your preferred method:
 
 ```bash
 # Recommended: Install script
@@ -51,39 +51,27 @@ codrsync init
 # Scan existing project
 codrsync scan
 
-# Check project status
-codrsync status
-
-# Connect integrations
-codrsync connect
-
 # Start superego mode with Claude Code
 codrsync start
+
+# Set up cloud storage
+codrsync storage init
+
+# Login to codrsync cloud
+codrsync auth --cloud
 ```
-
-### Commands
-
-| Command | Description |
-|---------|-------------|
-| `init` | Initialize project with AI-guided kickstart |
-| `scan` | Detect stack, docs, and integrations |
-| `connect` | Check integration status |
-| `status` | Show project dashboard |
-| `build` | Execute development with AI guidance |
-| `prp` | Manage PRPs (Product Requirement Prompts) |
-| `start` | Start Claude Code with codrsync as superego |
-| `sprint` | Manage development sprints |
-| `doctor` | Check installation and configuration |
 
 ### Documentation
 
 - [Getting Started](docs/en/getting-started.md)
 - [CLI Commands](docs/en/cli/commands.md)
 - [Quickstart Guide](docs/en/guides/quickstart.md)
+- [Product Suite Overview](docs/en/products/suite-overview.md)
+- [cloudrsync (Cloud Storage)](docs/en/products/cloudrsync.md)
+- [Pricing & Plans](docs/en/guides/pricing.md)
+- [Dashboard Guide](docs/en/guides/dashboard.md)
 
 ### Configuration
-
-Set your API key for AI features:
 
 ```bash
 # Anthropic (Claude)
@@ -100,23 +88,23 @@ codrsync auth --cloud
 
 ## Português
 
-**A IA da sua IA — Engenharia de contexto simplificada**
+**Orquestrador de Desenvolvimento com IA + Suite de Produtos**
 
-codrsync é um orquestrador de desenvolvimento com IA que ajuda você a entregar mais rápido e com confiança através de implementação guiada, validação interativa e contexto persistente.
+codrsync é um orquestrador de desenvolvimento com IA e suite de produtos que ajuda você a entregar mais rápido e com confiança. De engenharia de contexto e implementação guiada a armazenamento cloud, documentação automática e apresentações com IA — tudo que você precisa para construir, documentar e fazer deploy.
 
-### Recursos
+### Suite de Produtos
 
-- **Context Engineering**: Otimize interações com IA usando contexto estruturado
-- **Desenvolvimento Guiado por IA**: Assistência inteligente para implementações complexas
-- **Onboarding com IA**: Receba ajuda durante a instalação com `codrsync --help-ai`
-- **Detecção de Stack**: Detecção automática de linguagens, frameworks e ferramentas
-- **Suporte a Integrações**: Conecte com Supabase, Vercel, GitHub, Tailwind e mais
-- **Modo Superego**: Use codrsync como meta-orquestrador para Claude Code
-- **Multi-provider**: Funciona com Claude, GPT, Gemini e modelos locais via Ollama
+| Produto | Descrição | Disponibilidade |
+|---------|-----------|-----------------|
+| [**codrsync**](docs/pt-br/products/suite-overview.md#codrsync) | Orquestrador de desenvolvimento com IA e engenharia de contexto | Grátis + Todos os Planos |
+| [**cloudrsync**](docs/pt-br/products/cloudrsync.md) | Armazenamento cloud compatível com S3 — até 70% mais barato que AWS | Grátis (1 GB) / Pro+ |
+| [**docrsync**](docs/pt-br/products/suite-overview.md#docrsync) | Gere e mantenha documentação técnica automaticamente | Pro+ |
+| [**pptrsync**](docs/pt-br/products/suite-overview.md#pptrsync) | Crie apresentações do seu código com visuais gerados por IA | Pro+ |
+| [**envrsync**](docs/pt-br/products/suite-overview.md#envrsync) | Scanner de ambiente — detecção de stack, análise de segurança | Grátis (básico) / Pro |
+
+> **Em breve:** [gpursync](docs/pt-br/products/suite-overview.md#gpursync) — GPU cloud distribuída para cargas de trabalho ML.
 
 ### Instalação
-
-Escolha seu método preferido:
 
 ```bash
 # Recomendado: Script de instalação
@@ -145,39 +133,27 @@ codrsync init
 # Escanear projeto existente
 codrsync scan
 
-# Verificar status do projeto
-codrsync status
-
-# Conectar integrações
-codrsync connect
-
 # Iniciar modo superego com Claude Code
 codrsync start
+
+# Configurar armazenamento cloud
+codrsync storage init
+
+# Login no codrsync cloud
+codrsync auth --cloud
 ```
-
-### Comandos
-
-| Comando | Descrição |
-|---------|-----------|
-| `init` | Inicializar projeto com kickstart guiado por IA |
-| `scan` | Detectar stack, docs e integrações |
-| `connect` | Verificar status de integrações |
-| `status` | Mostrar dashboard do projeto |
-| `build` | Executar desenvolvimento com guia IA |
-| `prp` | Gerenciar PRPs (Product Requirement Prompts) |
-| `start` | Iniciar Claude Code com codrsync como superego |
-| `sprint` | Gerenciar sprints de desenvolvimento |
-| `doctor` | Verificar instalação e configuração |
 
 ### Documentação
 
 - [Primeiros Passos](docs/pt-br/getting-started.md)
 - [Comandos CLI](docs/pt-br/cli/commands.md)
 - [Guia Rápido](docs/pt-br/guides/quickstart.md)
+- [Visão Geral dos Produtos](docs/pt-br/products/suite-overview.md)
+- [cloudrsync (Cloud Storage)](docs/pt-br/products/cloudrsync.md)
+- [Preços & Planos](docs/pt-br/guides/pricing.md)
+- [Guia do Dashboard](docs/pt-br/guides/dashboard.md)
 
 ### Configuração
-
-Configure sua chave API para recursos de IA:
 
 ```bash
 # Anthropic (Claude)

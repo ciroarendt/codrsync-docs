@@ -69,13 +69,13 @@ Adicione ao seu `~/.bashrc` ou `~/.zshrc` para persistir.
 
 ### Autenticação Cloud
 
-Alternativamente, use codrsync cloud (inclui acesso à API):
+Alternativamente, use codrsync cloud (inclui acesso à API, armazenamento cloud e créditos):
 
 ```bash
 codrsync auth --cloud
 ```
 
-Isso abre o navegador para autenticação.
+Isso abre o navegador para autenticação. Com uma conta cloud você também tem acesso ao [armazenamento cloudrsync](products/cloudrsync.md), ao [dashboard web](guides/dashboard.md) e recursos como docrsync e pptrsync dependendo do seu plano.
 
 ### Verificar Configuração
 
@@ -126,6 +126,40 @@ codrsync start
 
 Isso inicia o Claude Code com contexto e diretrizes do codrsync.
 
+## Configuração de Armazenamento Cloud
+
+Configure o cloudrsync para armazenar arquivos em armazenamento cloud criptografado:
+
+```bash
+# Login no codrsync cloud
+codrsync auth --cloud
+
+# Inicializar armazenamento
+codrsync storage init
+
+# Criar seu primeiro bucket
+codrsync storage bucket create meu-bucket
+
+# Upload de arquivo
+codrsync storage put ./meuarquivo.txt meu-bucket/meuarquivo.txt
+```
+
+Todos os buckets usam criptografia AES-256-GCM por padrão. Veja a [documentação do cloudrsync](products/cloudrsync.md) para detalhes completos incluindo configuração de cliente S3.
+
+## A Suite de Produtos
+
+codrsync é mais do que um CLI — é uma plataforma completa de desenvolvimento:
+
+| Produto | O que faz |
+|---------|-----------|
+| **codrsync** | Orquestrador de desenvolvimento com IA e engenharia de contexto |
+| **cloudrsync** | Armazenamento cloud compatível com S3 (Storj + Filecoin) |
+| **docrsync** | Gere documentação técnica automaticamente |
+| **pptrsync** | Crie apresentações do seu codebase |
+| **envrsync** | Scanner de ambiente e análise de segurança |
+
+Veja a [Visão Geral dos Produtos](products/suite-overview.md) para detalhes de cada produto.
+
 ## Estrutura do Projeto
 
 Após inicialização, codrsync cria:
@@ -148,4 +182,7 @@ seu-projeto/
 
 - [Referência de Comandos CLI](cli/commands.md)
 - [Guia Rápido](guides/quickstart.md)
-- [Configuração de Integrações](guides/integrations.md)
+- [Visão Geral dos Produtos](products/suite-overview.md)
+- [cloudrsync (Cloud Storage)](products/cloudrsync.md)
+- [Preços & Planos](guides/pricing.md)
+- [Guia do Dashboard](guides/dashboard.md)

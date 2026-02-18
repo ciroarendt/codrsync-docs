@@ -5,7 +5,7 @@ Get up and running with codrsync in 5 minutes.
 ## 1. Install
 
 ```bash
-# macOS
+# macOS/Linux
 brew tap ciroarendt/codrsync && brew install codrsync
 
 # or via pip
@@ -15,7 +15,11 @@ pip install codrsync
 ## 2. Configure API Key
 
 ```bash
+# Use your own key (BYOK)
 export ANTHROPIC_API_KEY="your-key"
+
+# Or login to codrsync cloud for full features
+codrsync auth --cloud
 ```
 
 ## 3. Create Your First Project
@@ -39,8 +43,8 @@ codrsync status
 # Run diagnostics
 codrsync doctor
 
-# Start AI session
-codrsync kickstart
+# Start superego mode with Claude Code
+codrsync start
 ```
 
 ## 5. For Existing Projects
@@ -55,11 +59,34 @@ codrsync scan
 codrsync connect
 ```
 
+## 6. Try Cloud Storage
+
+```bash
+# Initialize cloud storage
+codrsync storage init
+
+# Create a bucket (AES-256-GCM encrypted by default)
+codrsync storage bucket create my-data
+
+# Upload a file
+codrsync storage put ./report.csv my-data/report.csv
+
+# List files
+codrsync storage ls my-data
+
+# Download
+codrsync storage get my-data/report.csv ./downloaded.csv
+```
+
+Free plan includes 1 GB of storage. [Upgrade](pricing.md) for up to 200 GB.
+
 ## What's Next?
 
-- [Full CLI Reference](../cli/commands.md)
-- [Integration Setup](integrations.md)
-- [Best Practices](best-practices.md)
+- [Full CLI Reference](../cli/commands.md) — All commands and options
+- [Product Suite Overview](../products/suite-overview.md) — codrsync, cloudrsync, docrsync, pptrsync, envrsync
+- [cloudrsync Documentation](../products/cloudrsync.md) — Cloud storage deep dive
+- [Pricing & Plans](pricing.md) — Plans, credits, and storage limits
+- [Dashboard Guide](dashboard.md) — Manage everything from the web
 
 ## Need Help?
 
